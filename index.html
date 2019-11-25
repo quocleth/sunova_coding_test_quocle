@@ -12,25 +12,26 @@
 	<body onload="loadServers();">
  		<h1>Software Developer position - Coding Challenge</h1>
 		<div id="buttons">
-			<button id="showAll" class="btn btn-outline-primary"> Show all</button>
-			<select id="choose" class="btn btn-outline-primary">
-  				<option value="0">Mileage</option>
-  				<option value="1">Name</option>
-  				<option value="2">Model</option>
-  				<option value="3">Engine</option>
-  				<option value="4">Color</option>
-			</select>
-			<input type="text" id="search" onkeyup="search()" placeholder="Please choose an option to search">
+			<input type="text" id="search" onkeyup="search()" placeholder="Search">
 		</div>
 		<div class="container">
 			<table id ="table" class="table table-light-dark table-striped" >
 				<thead>
 					<tr>
-						<th onclick="sortData(0)">Mileage</th>
-						<th onclick="sortData(1)">Name</th>
-						<th onclick="sortData(2)">Model</th>
-						<th onclick="sortData(3)">Engine</th>
-						<th onclick="sortData(4)">Color</th>
+						<th>Mileage<a href="#"><span onclick="sortData(0)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+
+						<th>Name<a href="#"><span onclick="sortData(1)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+
+						<th>Model<a href="#"><span onclick="sortData(2)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+
+						<th>Engine<a href="#"><span onclick="sortData(3)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+
+						<th>Color<a href="#"><span onclick="sortData(4)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
 					</tr>
 				</thead>
 				<tbody id = "sortable"></tbody>
