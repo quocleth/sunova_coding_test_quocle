@@ -9,7 +9,7 @@
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body>
+	<body onload="loadServers();">
  		<h1>Software Developer position - Coding Challenge</h1>
 		<div id="buttons">
 			<button id="showAll" class="btn btn-outline-primary"> Show all</button>
@@ -23,14 +23,14 @@
 			<input type="text" id="search" onkeyup="search()" placeholder="Please choose an option to search">
 		</div>
 		<div class="container">
-			<table id ="table" class="table table-light-dark table-striped">
+			<table id ="table" class="table table-light-dark table-striped" >
 				<thead>
 					<tr>
-						<th data-sort="mileage">Mileage</th>
-						<th data-sort="name">Name</th>
-						<th data-sort="model">Model</th>
-						<th data-sort="engine">Engine</th>
-						<th data-sort="color">Color</th>
+						<th onclick="sortData(0)">Mileage</th>
+						<th onclick="sortData(1)">Name</th>
+						<th onclick="sortData(2)">Model</th>
+						<th onclick="sortData(3)">Engine</th>
+						<th onclick="sortData(4)">Color</th>
 					</tr>
 				</thead>
 				<tbody id = "sortable"></tbody>
@@ -40,5 +40,7 @@
 			<p>Copyright 2019 by Quoc Le.</p>
 		</div>
 		<script src="js/server.js"></script>
+		<script src="js/search.js"></script>
+		<script src="js/sort.js"></script>
 	</body>
 </html>
