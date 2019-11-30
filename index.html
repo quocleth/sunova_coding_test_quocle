@@ -1,3 +1,15 @@
+<!-- //-----------------------------------------
+// NAME: Quoc Le
+// Email: quocleth@gmail.com
+// Phone: (204) 915-6184
+// **** Sunova Coding Challenge - Software Developer position ****
+//
+// REMARKS: Implement a a table using JavaScript to retrieve the data (XML) from Sunova server
+//					- Sort every column by ascending and descending order.
+//					- Search and filter every column in the search box.
+//----------------------------------------- -->
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,20 +30,20 @@
 			<table id ="table" class="table table-light-dark table-striped" >
 				<thead>
 					<tr>
-						<th>Mileage<a href="#"><span onclick="sortData(0)" class="arrow">&#8593;</span></a>
-							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+						<th>Mileage<a href="#"><span onclick="sortData(0,true)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="sortData(0,false)" class="arrow">&#8595;</span></a></th>
 
-						<th>Name<a href="#"><span onclick="sortData(1)" class="arrow">&#8593;</span></a>
-							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+						<th>Name<a href="#"><span onclick="sortData(1, true)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="sortData(1,false)" class="arrow">&#8595;</span></a></th>
 
-						<th>Model<a href="#"><span onclick="sortData(2)" class="arrow">&#8593;</span></a>
-							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+						<th>Model<a href="#"><span onclick="sortData(2, true)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="sortData(2,false)" class="arrow">&#8595;</span></a></th>
 
-						<th>Engine<a href="#"><span onclick="sortData(3)" class="arrow">&#8593;</span></a>
-							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+						<th>Engine<a href="#"><span onclick="sortData(3, true)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="sortData(3,false)" class="arrow">&#8595;</span></a></th>
 
-						<th>Color<a href="#"><span onclick="sortData(4)" class="arrow">&#8593;</span></a>
-							<a href="#"><span onclick="" class="arrow">&#8595;</span></a></th>
+						<th>Color<a href="#"><span onclick="sortData(4, true)" class="arrow">&#8593;</span></a>
+							<a href="#"><span onclick="sortData(4,false)" class="arrow">&#8595;</span></a></th>
 					</tr>
 				</thead>
 				<tbody id = "sortable"></tbody>
@@ -39,6 +51,8 @@
 		</div>
 		<div class="footer">
 			<p>Copyright 2019 by Quoc Le.</p>
+			<p>Email: quocleth@gmail.com</p>
+			<p>(204) 915-6184</p>
 		</div>
 		<script src="js/server.js"></script>
 		<script src="js/search.js"></script>

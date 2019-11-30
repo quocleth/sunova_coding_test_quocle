@@ -1,6 +1,18 @@
-//sort numbers function
-function sortMileage(a, b)
-{
+//-----------------------------------------
+// NAME: Quoc Le
+// Email: quocleth@gmail.com
+// Phone: (204) 915-6184
+// **** Sunova Coding Challenge - Software Developer position ****
+//
+// REMARKS: Implement a a table using JavaScript to retrieve the data (XML) from Sunova server
+//					- Sort every column by ascending and descending order.
+//					- Search and filter every column in the search box.
+//-----------------------------------------
+
+
+/*------------------------------------------------------------------------------*/
+//sort numbers function in Asc. order
+function sortMileageAsc(a, b){
 	if(Number(a) > Number(b))
 	{
 		return true;
@@ -10,10 +22,12 @@ function sortMileage(a, b)
 		return false;
 	}
 }
+/*------------------------------------------------------------------------------*/
 
-//sort strings function
-function sortString(a, b)
-{
+
+/*------------------------------------------------------------------------------*/
+//sort strings function in Asc. order
+function sortStringAsc(a, b){
 	if(a.toString().toLowerCase() > b.toString().toLowerCase())
 	{
 		return true;
@@ -23,9 +37,42 @@ function sortString(a, b)
 		return false;
 	}
 }
+/*------------------------------------------------------------------------------*/
 
+
+/*------------------------------------------------------------------------------*/
+//sort numbers function in Desc. order
+function sortMileageDesc(a, b){
+	if(Number(a) < Number(b))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+/*------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------*/
+//sort strings function in Desc. order
+function sortStringDesc(a, b){
+	if(a.toString().toLowerCase() < b.toString().toLowerCase())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+/*------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------*/
 //sort table function
-function sortData(n){
+function sortData(n, m){
 	var sorting, isSorted, table, rows, previousRow, nextRow;
 
 	table = document.getElementsByTagName('table'); //get a table
@@ -46,31 +93,61 @@ function sortData(n){
 			
 			if(previousRow) // check if not undefined
 			{
-				//compare data
-				if(n == 0)
+				//check if it is ASC
+				if(m === true)
 				{
-					if(sortMileage(previousRow.innerHTML, nextRow.innerHTML))
+					//check if it is the first column - Mileage
+					if(n == 0)
 					{
-						isSorted = true; //set sorted
-						break; // then break the loop to sort
+						if(sortMileageAsc(previousRow.innerHTML, nextRow.innerHTML))
+						{
+							isSorted = true; //set sorted
+							break; // then break the loop to sort
+						}
+					}
+					else //check other columns which are compare strings
+					{
+						if(sortStringAsc(previousRow.innerHTML, nextRow.innerHTML))
+						{
+							isSorted = true; //set sorted
+							break; // then break the loop to sort
+						}
 					}
 				}
-				else
+				else //check if it is DESC
 				{
-					if(sortString(previousRow.innerHTML, nextRow.innerHTML))
+					//check if it is the first column - Mileage
+					if(n == 0)
 					{
-						isSorted = true; //set sorted
-						break; // then break the loop to sort
+						if(sortMileageDesc(previousRow.innerHTML, nextRow.innerHTML))
+						{
+							isSorted = false; //set sorted
+							break; // then break the loop to sort
+						}
+					}
+					else //check other columns which are compare strings
+					{
+						if(sortStringDesc(previousRow.innerHTML, nextRow.innerHTML))
+						{
+							isSorted = false; //set sorted
+							break; // then break the loop to sort
+						}
 					}
 				}
 			}
 		}
 
-		// need to swap two elements
+		// need to swap two elements if it is Asc
 		if(isSorted)
+		{
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]); //swap
+			sorting = true; // keep sorting
+		}
+		else  //need to swap two elements if it is Desc
 		{
 			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]); //swap
 			sorting = true; // keep sorting
 		}
 	}
 }
+/*------------------------------------------------------------------------------*/
